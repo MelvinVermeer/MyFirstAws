@@ -5,5 +5,8 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
+      - run:
+          name: Install awscli
+          command: apt-get install -y awscli
       - deploy:
           command: aws cloudformation deploy --template-file .cloudformation/template.yml --region eu-west-1
