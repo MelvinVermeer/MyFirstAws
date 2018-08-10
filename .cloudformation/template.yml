@@ -9,7 +9,7 @@ Resources:
     DeletionPolicy: Retain
 Outputs:
   S3Name:
-    Value: !GetAtt [S3Bucket, BucketName]
+    Value: !GetAtt [S3Bucket, Name]
     Description: URL for website hosted on S3
   WebsiteURL:
     Value: !GetAtt [S3Bucket, WebsiteURL]
