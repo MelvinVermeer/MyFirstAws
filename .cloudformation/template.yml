@@ -4,11 +4,13 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       AccessControl: PublicRead
-      BucketName: PublicBucket
       WebsiteConfiguration:
         IndexDocument: index.html
     DeletionPolicy: Retain
 Outputs:
+  S3Name:
+    Value: !GetAtt [S3Bucket, BucketName]
+    Description: URL for website hosted on S3
   WebsiteURL:
     Value: !GetAtt [S3Bucket, WebsiteURL]
     Description: URL for website hosted on S3

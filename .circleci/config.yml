@@ -14,4 +14,4 @@ jobs:
           name: Cloudformation
           command: |
             aws cloudformation update-stack --stack-name my-first-stack --template-body file://.cloudformation/template.yml --region eu-west-1
-            aws s3 sync src s3://${S3BucketSecureURL} --delete
+            aws s3 sync src s3://${S3Name} --delete
