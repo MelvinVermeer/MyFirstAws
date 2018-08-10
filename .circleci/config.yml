@@ -11,4 +11,4 @@ jobs:
             apt-get -y -qq update
             apt-get install -y awscli
       - deploy:
-          command: aws cloudformation update-stack --stack-name my-first-stack --template-body file://.cloudformation/template.yml 
+          command: aws cloudformation update-stack --stack-name my-first-stack --template-body file://.cloudformation/template.yml --region eu-west-1
