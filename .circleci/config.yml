@@ -6,7 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install awscli
-          command: apt-get install -y awscli
+          name: Install dependencies
+          command: |
+            apt-get -y -qq update
+            apt-get install -y awscli
       - deploy:
           command: aws cloudformation deploy --template-file .cloudformation/template.yml --region eu-west-1
